@@ -4,6 +4,10 @@ pipeline {
         maven "Maven 3.8.5"
     
     }
+    
+    environment {
+		DOCKERHUB_CREDENTIALS=credentials('DockerId')
+	}
     stages {
         stage('Compile and Clean') { 
             steps {
